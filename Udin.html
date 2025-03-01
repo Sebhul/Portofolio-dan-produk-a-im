@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #1c1c1c;
+            padding: 15px;
+            text-align: center;
+            z-index: 999;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transition: 0.3s;
+        }
+
+        /* Header Section */
+        header {
+            height: 100vh;
+            background: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5em;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.5em;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #222;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Biodata Section */
+        .biodata {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333;
+            padding: 40px 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .biodata img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 30px;
+        }
+
+        .biodata .info {
+            color: white;
+            text-align: left;
+        }
+
+        .biodata h3 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        .biodata p {
+            font-size: 1.2em;
+        }
+
+        /* Skill Section with Logo */
+        .skills {
+            padding: 80px 20px;
+            background: #333;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        .skills .skill {
+            display: inline-block;
+            margin: 20px;
+            font-size: 1.5em;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInSkill 0.6s ease forwards;
+        }
+
+        .skills .skill img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .skills .skill:hover img {
+            transform: scale(1.3);
+        }
+
+        @keyframes fadeInSkill {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 20px;
+            background: #444;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        .project-card {
+            background: #555;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+            width: 280px;
+            display: inline-block;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInProject 0.8s ease forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInProject {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .project-card p {
+            font-size: 1em;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            color: #fff;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: #111;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        .contact input, .contact textarea, .contact button {
+            padding: 15px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            font-size: 1em;
+            background: #333;
+            color: white;
+        }
+
+        .contact button {
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background: #388E3C;
+        }
+
+        /* Animations */
+        .fadeIn {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-card {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1 class="fadeIn">   ICAN</h1>
+        <p class="fadeIn">Front-End Developer | UI/UX Enthusiast</p>
+    </header>
+
+    <!-- Biodata Section -->
+    <section class="biodata">
+        <img src="ganteng.jpg" alt="iksan">
+        <div class="info">
+            <h3>MUHAMMAD IKHSAN</h3>
+            <p>I'm a passionate front-end developer with expertise in HTML, CSS, JavaScript, and React. I also have a strong background in UI/UX design and GitHub collaboration.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fadeIn">
+        <h2>About Me</h2>
+        <p>I'm a passionate Front-End Developer with experience in creating dynamic, responsive websites. I specialize in HTML, CSS, JavaScript, and modern frameworks like React.</p>
+    </section>
+
+    <!-- Skills Section with Logo -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skill fadeIn">
+            <img src="3.png" alt="HTML5">
+            <p>HTML</p>
+        </div>
+        <div class="skill fadeIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS3">
+            <p>CSS</p>
+        </div>
+        <div class="skill fadeIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+            <p>JavaScript</p>
+        </div>
+        <div class="skill fadeIn">
+            <img src="6.png" alt="PHP">
+            <p>PHP</p>
+        </div>
+        <div class="skill fadeIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+            <p>Python</p>
+        </div>
+        <div class="skill fadeIn">
+            <img src="github.png" alt="GitHub">
+            <p>GitHub</p>
+        </div>
+        <div class="skill fadeIn">
+            <img src="3.jpg" alt="UI/UX">
+            <p>UI/UX Design</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>JANGAN LUPA BELI PRODUK A'IM</h2>
+        <div class="project-card fadeIn">
+            <img src="aim2.jpg" alt="Project 1">
+            <h3>kie tah hurung pernah nyoba enyong</h3>
+            <p>Rasa yang tak ada yang tau.</p>
+            <a href="https://github.com" target="_blank">View Project</a>
+        </div>
+        <div class="project-card fadeIn">
+            <img src="aim1.jpg" alt="Project 2">
+            <h3>kie madan kek angur</h3>
+            <p>rasa angur,enak buat sekolah.</p>
+            <a href="https://github.com" target="_blank">View Project</a>
+        </div>
+        <div class="project-card fadeIn">
+            <img src="aim3.jpg" alt="Project 3">
+            <h3>mie aquatik</h3>
+            <p>seperti nama nya ini rasa mie.</p>
+            <a href="https://github.com" target="_blank">View Project</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message" rows="4"></textarea>
+        <button>Send Message</button>
+    </section>
+</body>
+</html>
